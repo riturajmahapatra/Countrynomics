@@ -85,10 +85,6 @@ a {
   margin-block: 8px;
 }
 
-.country-card img {
-  width: 100%;
-}
-
 .search-container {
   box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.15);
   max-width: 350px;

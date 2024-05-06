@@ -1,48 +1,32 @@
-// function CountryCard(CountryName, FlagImg, population,region,capital) {
-//   return (
-//     <div>
-//       <a className="country-card" href="">
-//         <img src={FlagImg} alt={CountryName + 'flag'} />
-//         <div className="card-text">
-//           <h3>{CountryName}</h3>
-//           <p>
-//             <b>Population: </b>
-//             {population.toLocaleString('en-IN')}
-//           </p>
-//           <p>
-//             <b>Region: </b>
-//             {region}
-//           </p>
-//           <p>
-//             <b>Capital: </b>
-//             {capital}
-//           </p>
-//         </div>
-//       </a>
-//     </div>
-//   );
-// }
-
-// export default CountryCard;
-
-export default function CountryCard() {
+export default function CountryCard({
+  name,
+  flagImg,
+  population,
+  region,
+  capital,
+}) {
   return (
     <div>
       <a className="country-card" href="/country.html?name=Barbados">
-        <img src="https://flagcdn.com/in.svg" alt="barb" />
+        <img
+          className=" border border-2  rounded-lg h-40 w-full "
+          src={flagImg}
+          alt={name + ' flag'}
+        />
+
         <div className="card-text">
-          <h2>Bharat</h2>
+          <h1 className="font-bold text-xl mt-2 truncate">{name}</h1>
           <p>
             <b>Population: </b>
-            246651355
+            {population ? population : 'N/A'}
           </p>
           <p>
             <b>Region: </b>
-            Asia
+            {region ? region : 'N/A'}
           </p>
           <p>
             <b>Capital: </b>
-            New Delhi
+            {capital ? capital : 'N/A'}
           </p>
         </div>
       </a>
