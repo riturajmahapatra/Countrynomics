@@ -1,14 +1,18 @@
 import CountryCard from './CountryCard';
 import CountriesData from '../../CountriesData';
 
-export default function CountriesList() {
-  const arr = CountriesData.map((country) => {
-    console.log(country);
+export default function CountriesList({ query }) {
+  const filterdCountries = CountriesData.filter((country) =>
+    country.name.common.toLowerCase().includes(query)
+  );
+  // console.log(filterdCountries);
+
+  const arr = filterdCountries.map((country) => {
     return (
       <CountryCard
         name={country.name.common}
         flagImg={country.flags.png}
-        population={country.population}
+        population={country.population.toLocaleString('en-IN')}
         region={country.region}
         capital={country.capital}
       />

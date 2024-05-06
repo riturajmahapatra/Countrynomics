@@ -7,7 +7,7 @@ export default function CountryCard({
 }) {
   return (
     <div>
-      <a className="country-card" href="/country.html?name=Barbados">
+      <a className="country-card" href={`/country.html?name=${name}`}>
         <img
           className=" border border-2  rounded-lg h-40 w-full "
           src={flagImg}
@@ -25,7 +25,7 @@ export default function CountryCard({
             {region ? region : 'N/A'}
           </p>
           <p>
-            <b>Capital: </b>
+            <b className="truncate">Capital: </b>
             {capital ? capital : 'N/A'}
           </p>
         </div>
