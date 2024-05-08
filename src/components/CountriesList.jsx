@@ -1,8 +1,19 @@
 import CountryCard from './CountryCard';
-import CountriesData from '../../CountriesData';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function CountriesList({ query }) {
-  const filterdCountries = CountriesData.filter((country) =>
+  const [contriesData, setContriesData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/all')
+      .then((res) => res.json())
+      .then((data) => {
+        setContriesData(data);
+      });
+  }, []);
+
+  const filterdCountries = contriesData.filter((country) =>
     country.name.common.toLowerCase().includes(query)
   );
   // console.log(filterdCountries);

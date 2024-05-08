@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
         <Header />
-        <div className="flex justify-between max-w-[1200px] m-auto mt-6 items-center">
+        <div className="flex justify-between max-w-[1200px] m-auto mt-6 items-center mb-8">
           <Searchbar setquery={setquery} />
           <SelectMenu />
         </div>
