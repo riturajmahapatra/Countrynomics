@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import Header from './components/Header.jsx';
 import World from './components/World.jsx';
+
+//router added from remix router versions
 const router = createBrowserRouter([
   {
     path: '/',
